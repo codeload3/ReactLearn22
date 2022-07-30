@@ -1,0 +1,25 @@
+import React from "react";
+
+var isDone = false; // declarative programming, state of <p> tag depends on value of isDone
+
+//************Imperitive programming************
+function strike() {
+  document.getElementById("root").style.textDecoration = "line-through";
+}
+
+function unStrike() {
+  document.getElementById("root").style.textDecoration = null;
+}
+//************Imperitive programming************
+
+function App() {
+  return (
+    <div>
+      <p style={isDone ? { textDecoration: "line-through" } : null}>Buy milk</p>
+      <button onClick={strike}>Change to strike through</button>
+      <button onClick={unStrike}>Change back</button>
+    </div>
+  );
+}
+
+export default App;
